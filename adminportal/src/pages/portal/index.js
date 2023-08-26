@@ -10,12 +10,14 @@ import {
 } from "react-icons/ti";
 import DeleteModal from "../../modals/deletemodal";
 import { isEmpty } from "../../helpers";
+import AddModal from "../../modals/addmodal";
 
 let page = 1;
 const Portal = () => {
   const data = JSON.parse(localStorage.getItem("customers"));
 
   const [deleteModal, setDeleteModal] = useState({ open: false, id: null });
+  const [addModal, setAddModal] = useState({ open: false });
 
   const [sortDir, setSetsortDir] = useState({ dir: null, tab: null });
 
@@ -48,7 +50,10 @@ const Portal = () => {
 
   return (
     <div className="h-screen xs:px-5 large:px-17 py-12">
-      <button className="text-white flex items-center xs:px-5 tablet:px-9 py-6 rounded-lg bg-gradient-to-r from-silverTree to-sherphaBlue">
+      <button
+        className="text-white flex items-center xs:px-5 tablet:px-9 py-6 rounded-lg bg-gradient-to-r from-silverTree to-sherphaBlue"
+        onClick={() => setAddModal({ open: true })}
+      >
         <IoAdd size={19} />
         <span className="xs:text-base tablet:text-xl xs:pl-4 tablet:pl-10">
           ADD NEW CUSTOMER
@@ -250,6 +255,7 @@ const Portal = () => {
         customerId={deleteModal.id}
         setIsOpen={setDeleteModal}
       />
+      <AddModal isOpen={addModal.open} setIsOpen={setAddModal} />
     </div>
   );
 };

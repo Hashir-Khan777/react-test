@@ -17,6 +17,13 @@ body {
   display: block;
 }
 
+.modal-bg {
+  background-image: url("/public/images/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
 .open {
   left: 0;
 }
