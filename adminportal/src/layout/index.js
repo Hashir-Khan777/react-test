@@ -5,10 +5,10 @@ import { Header, Sidebar } from "../components";
 const Layout = () => {
   return (
     <div className="flex xs:flex-col desktopMini:flex-row h-screen">
-      <div>
+      <div className="sidebar">
         <Sidebar />
       </div>
-      <main className="bg-gray flex flex-1 flex-col overflow-x-auto">
+      <main className="bg-[#F3F3F3] flex flex-1 flex-col overflow-x-auto">
         <Header>CUSTOMERS</Header>
         <Portal />
       </main>

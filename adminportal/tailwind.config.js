@@ -10,7 +10,7 @@ module.exports = {
       phone: "480px",
       tablet: "768px",
       desktopMini: "992px",
-      desktop: "1025px",
+      desktop: "1024px",
       large: "1260px",
       xl: "1440px",
     },
@@ -20,7 +20,6 @@ module.exports = {
         "4xl": "0px 3px 15px #6B6B6B1A",
       },
       colors: {
-        gray: "#F3F3F3",
         primaryGreen: "#015249",
         secondaryGreen: "#043933",
         darkGray: "#00000040",
