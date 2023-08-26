@@ -2,8 +2,8 @@ import ActionTypes from "../../actionTypes";
 
 const INITIAL_STATE = {
   getCustomer: {
-    loading: true,
-    data: [],
+    loading: false,
+    data: JSON.parse(localStorage.getItem("customers")),
     error: null,
   },
 };
@@ -14,6 +14,7 @@ const CustomerReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         getCustomer: {
+          ...state.getCustomer,
           loading: true,
         },
       };
@@ -22,6 +23,7 @@ const CustomerReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         getCustomer: {
+          ...state.getCustomer,
           loading: false,
           data: action.payload,
         },
@@ -31,7 +33,26 @@ const CustomerReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         getCustomer: {
+          ...state.getCustomer,
           loading: false,
+          error: action.payload,
+        },
+      };
+
+    case ActionTypes.DELETE_CUSTOMER_SUCCESS:
+      return {
+        ...state,
+        getCustomer: {
+          ...state.getCustomer,
+          data: action.payload,
+        },
+      };
+
+    case ActionTypes.DELETE_CUSTOMER_FAIL:
+      return {
+        ...state,
+        getCustomer: {
+          ...state.getCustomer,
           error: action.payload,
         },
       };

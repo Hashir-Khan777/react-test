@@ -1,5 +1,5 @@
-import Button from "./button";
 import Sidebar from "./sidebar";
 import Header from "./header";
+import Spinner from "./spinner";
 
-export { Button, Sidebar, Header };
+export { Sidebar, Header, Spinner };
