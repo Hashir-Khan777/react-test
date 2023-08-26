@@ -13,13 +13,34 @@ body {
   transition: 0.3s;
 }
 
+.hamburger {
+  display: block;
+}
+
+.open {
+  left: 0;
+}
+
+.close-button {
+  display: block;
+}
+
 @media only screen and (min-width: 1441px) {
   .toggle_icon {
     display: none;
   }
+
   .sidebar {
     position: relative;
     left: 0;
     transition: 0.3s;
+  }
+
+  .close-button {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
   }
 }

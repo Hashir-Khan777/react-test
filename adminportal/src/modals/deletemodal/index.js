@@ -14,7 +14,6 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     border: "none",
-    width: "528px",
   },
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.8)",
@@ -40,9 +39,9 @@ const DeleteModal = ({ isOpen, setIsOpen, customerId }) => {
         <RiDeleteBin6Line size={85} className="text-red-700" />
         <p className="text-center text-3xl font-bold my-6">Are you sure?</p>
         <p className="text-center text-22">
-          Do you really want to delete this customer? This process can not be
-          undone.
+          Do you really want to delete this customer?
         </p>
+        <p className="text-center text-22">This process can not be undone.</p>
         <div className="mt-16 flex justify-evenly w-full">
           <button
             className="text-base text-white bg-[#A5A5AF] py-2 px-10 rounded"

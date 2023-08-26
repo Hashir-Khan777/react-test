@@ -48,9 +48,11 @@ const Portal = () => {
 
   return (
     <div className="h-screen xs:px-5 large:px-17 py-12">
-      <button className="text-white flex items-center px-9 py-6 rounded-lg bg-gradient-to-r from-silverTree to-sherphaBlue">
+      <button className="text-white flex items-center xs:px-5 tablet:px-9 py-6 rounded-lg bg-gradient-to-r from-silverTree to-sherphaBlue">
         <IoAdd size={19} />
-        <span className="text-xl pl-10">ADD NEW CUSTOMER</span>
+        <span className="xs:text-base tablet:text-xl xs:pl-4 tablet:pl-10">
+          ADD NEW CUSTOMER
+        </span>
       </button>
       {getCustomer?.loading ? (
         <div className="flex items-center justify-center h-full">
@@ -185,7 +187,7 @@ const Portal = () => {
           {getCustomer?.data?.customers?.map((customer) => (
             <div key={customer?.id} className="my-18 desktop:hidden">
               <div className="flex rounded-ss-lg">
-                <div className="flex justify-center h-auto text-white bg-primaryGreen py-3 w-36 rounded-ss-lg">
+                <div className="flex justify-center h-auto text-white bg-primaryGreen py-3 xs:w-20 phone:w-36 rounded-ss-lg">
                   <span className="self-center text-center"></span>
                 </div>
                 <div className="p-2 border border-gray-300 flex-1">
@@ -196,7 +198,7 @@ const Portal = () => {
                 </div>
               </div>
               <div className="flex">
-                <div className="flex justify-center h-auto text-white bg-primaryGreen py-3 w-36">
+                <div className="flex justify-center h-auto text-white bg-primaryGreen py-3 xs:w-20 phone:w-36">
                   <span className="self-center text-center">Customer ID#</span>
                 </div>
                 <div className="p-2 border border-gray-300 flex-1">
@@ -204,7 +206,7 @@ const Portal = () => {
                 </div>
               </div>
               <div className="flex">
-                <div className="flex justify-center h-auto text-white bg-primaryGreen py-3 w-36">
+                <div className="flex justify-center h-auto text-white bg-primaryGreen py-3 xs:w-20 phone:w-36">
                   <span className="self-center text-center">Customer Name</span>
                 </div>
                 <div className="p-2 border border-gray-300 flex-1">
@@ -214,7 +216,7 @@ const Portal = () => {
                 </div>
               </div>
               <div className="flex">
-                <div className="flex justify-center h-auto text-white bg-primaryGreen py-3 w-36">
+                <div className="flex justify-center h-auto text-white bg-primaryGreen py-3 xs:w-20 phone:w-36">
                   <span className="self-center text-center">Email</span>
                 </div>
                 <div className="p-2 border border-gray-300 flex-1">
@@ -222,15 +224,15 @@ const Portal = () => {
                 </div>
               </div>
               <div className="flex">
-                <div className="flex justify-center h-auto text-white bg-primaryGreen py-4 w-36 rounded-es-lg">
+                <div className="flex justify-center h-auto text-white bg-primaryGreen py-4 xs:w-20 phone:w-36 rounded-es-lg">
                   <span className="self-center text-center"></span>
                 </div>
                 <div className="p-2 border border-gray-300 flex-1">
-                  <button className="mr-7 text-base text-green-700 bg-green-300 py-2 px-10 rounded">
+                  <button className="mr-7 text-base text-green-700 bg-green-300 py-2 tablet:px-10 rounded xs:px-4">
                     Edit
                   </button>
                   <button
-                    className="text-base text-red-700 bg-red-300 py-2 px-10 rounded"
+                    className="text-base text-red-700 bg-red-300 py-2 tablet:px-10 rounded xs:px-4"
                     onClick={() =>
                       setDeleteModal({ open: true, id: customer?.id })
                     }
