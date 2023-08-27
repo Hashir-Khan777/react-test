@@ -17,8 +17,7 @@ const Portal = () => {
   const data = JSON.parse(localStorage.getItem("customers"));
 
   const [deleteModal, setDeleteModal] = useState({ open: false, id: null });
-  const [addModal, setAddModal] = useState({ open: false });
-
+  const [addModal, setAddModal] = useState({ open: false, customer: {} });
   const [sortDir, setSetsortDir] = useState({ dir: null, tab: null });
 
   const dispatch = useDispatch();
@@ -173,7 +172,12 @@ const Portal = () => {
                   </td>
                   <td className="text-center">{customer?.email}</td>
                   <td className="text-center rounded-e-xl">
-                    <button className="mr-7 text-base text-green-700 bg-green-300 py-2 px-10 rounded">
+                    <button
+                      className="mr-7 text-base text-green-700 bg-green-300 py-2 px-10 rounded"
+                      onClick={() =>
+                        setAddModal({ open: true, customer: customer })
+                      }
+                    >
                       Edit
                     </button>
                     <button
@@ -233,7 +237,12 @@ const Portal = () => {
                   <span className="self-center text-center"></span>
                 </div>
                 <div className="p-2 border border-gray-300 flex-1">
-                  <button className="mr-7 text-base text-green-700 bg-green-300 py-2 tablet:px-10 rounded xs:px-4">
+                  <button
+                    className="mr-7 text-base text-green-700 bg-green-300 py-2 tablet:px-10 rounded xs:px-4"
+                    onClick={() =>
+                      setAddModal({ open: true, customer: customer })
+                    }
+                  >
                     Edit
                   </button>
                   <button
@@ -255,7 +264,11 @@ const Portal = () => {
         customerId={deleteModal.id}
         setIsOpen={setDeleteModal}
       />
-      <AddModal isOpen={addModal.open} setIsOpen={setAddModal} />
+      <AddModal
+        isOpen={addModal.open}
+        setIsOpen={setAddModal}
+        data={addModal.customer}
+      />
     </div>
   );
 };

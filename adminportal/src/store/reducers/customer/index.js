@@ -57,6 +57,42 @@ const CustomerReducer = (state = INITIAL_STATE, action) => {
         },
       };
 
+    case ActionTypes.ADD_CUSTOMER_SUCCESS:
+      return {
+        ...state,
+        getCustomer: {
+          ...state.getCustomer,
+          data: action.payload,
+        },
+      };
+
+    case ActionTypes.ADD_CUSTOMER_FAIL:
+      return {
+        ...state,
+        getCustomer: {
+          ...state.getCustomer,
+          error: action.payload,
+        },
+      };
+
+    case ActionTypes.EDIT_CUSTOMER_SUCCESS:
+      return {
+        ...state,
+        getCustomer: {
+          ...state.getCustomer,
+          data: action.payload,
+        },
+      };
+
+    case ActionTypes.EDIT_CUSTOMER_FAIL:
+      return {
+        ...state,
+        getCustomer: {
+          ...state.getCustomer,
+          error: action.payload,
+        },
+      };
+
     default:
       return state;
   }
